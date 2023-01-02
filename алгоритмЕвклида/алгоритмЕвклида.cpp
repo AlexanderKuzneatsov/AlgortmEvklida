@@ -2,6 +2,10 @@
 
 using namespace std;
 
+void Algoritm(int a, int b);
+
+void Print(int Error,int a,int b);
+
 
 int main()
 {
@@ -11,18 +15,28 @@ int main()
     int b = 0;
 
     cout << "Введите два числа для определения наиболее общего делителя" << endl;
-    
+   
     cout << "Первое число - ";
     cin >> a;
-    
+
     cout << endl << "Второе число - ";
     cin >> b;
-    
+
     cout << endl;
 
-    while ((a>0) && (b>0))
+    Algoritm(a,b);
+    
+}
+
+void Algoritm(int a, int b)
+{
+    
+    int Error = 0;
+
+
+    while ((a > 0) && (b > 0))
     {
-        if (a>b)
+        if (a > b)
         {
             a = a - b;
         }
@@ -33,6 +47,11 @@ int main()
 
     }
 
+    Print(Error, a, b);
+}
+
+void Print(int Error, int a, int b)
+{
     if ((a < 0) || (b < 0))
     {
         cout << "Введено неверное число" << endl;
@@ -46,4 +65,3 @@ int main()
         cout << "Наиболее общий делитель - " << b << endl;
     }
 }
-
